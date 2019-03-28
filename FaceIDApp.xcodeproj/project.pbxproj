@@ -12,6 +12,7 @@
 		041B7BD8224C68EE0050A295 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 041B7BD6224C68EE0050A295 /* Main.storyboard */; };
 		041B7BDA224C68F00050A295 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 041B7BD9224C68F00050A295 /* Assets.xcassets */; };
 		041B7BDD224C68F00050A295 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 041B7BDB224C68F00050A295 /* LaunchScreen.storyboard */; };
+		041B7BEC224C8AD60050A295 /* BiometricIDAuthentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041B7BEB224C8AD60050A295 /* BiometricIDAuthentication.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		041B7BD9224C68F00050A295 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		041B7BDC224C68F00050A295 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		041B7BDE224C68F00050A295 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		041B7BEB224C8AD60050A295 /* BiometricIDAuthentication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BiometricIDAuthentication.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +56,7 @@
 		041B7BD1224C68EE0050A295 /* FaceIDApp */ = {
 			isa = PBXGroup;
 			children = (
+				041B7BEB224C8AD60050A295 /* BiometricIDAuthentication.swift */,
 				041B7BD2224C68EE0050A295 /* AppDelegate.swift */,
 				041B7BD4224C68EE0050A295 /* ViewController.swift */,
 				041B7BD6224C68EE0050A295 /* Main.storyboard */,
@@ -135,6 +138,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				041B7BEC224C8AD60050A295 /* BiometricIDAuthentication.swift in Sources */,
 				041B7BD5224C68EE0050A295 /* ViewController.swift in Sources */,
 				041B7BD3224C68EE0050A295 /* AppDelegate.swift in Sources */,
 			);

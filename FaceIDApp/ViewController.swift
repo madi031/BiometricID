@@ -6,37 +6,32 @@
 //  Copyright © 2019 com.madi.faceid. All rights reserved.
 //
 
-import LocalAuthentication
 import UIKit
 
 class ViewController: UIViewController {
+    
+    let touchMe = BiometricIDAuthentication()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
     }
 
     @IBAction func autheticateTapped(_ sender: Any) {
-        let context = LAContext()
-        if context.canEvaluatePolicy(.deviceOwnerAuthentication, error: nil) {
-            self.evaluateFaceIdAuthenticity(context: context)
-        }
+        loginAction()
     }
     
-    func evaluateFaceIdAuthenticity(context: LAContext) {
-        let reason = "Is it really you?"
-        
-        context.evaluatePolicy(.deviceOwnerAuthentication, localizedReason: reason) { (success, error) in
-            if success {
-                print("success!!")
+    func loginAction() {
+        touchMe.autheticateUser { [weak self] message in
+            if let message = message {
+                let alertView = UIAlertController(title: "Oops!!", message: message, preferredStyle: .alert)
+                let okAction = UIAlertAction(title: "Darn!", style: .default)
+                alertView.addAction(okAction)
+                self?.present(alertView, animated: true, completion: nil)
             } else {
-                print("Error, \(String(describing: error))")
-                let alert = UIAlertController(title: "Authentication failed!!", message: "Try again", preferredStyle: .alert)
-                let action = UIAlertAction(title: "OK", style: .default, handler: { (alert) in
-                    // do nothing
-                })
-                alert.addAction(action)
-                self.present(alert, animated: true, completion: nil)
+                let alertView = UIAlertController(title: "Yay!!", message: "Face/Touch ID success", preferredStyle: .alert)
+                let okAction = UIAlertAction(title: "Hurray!", style: .default)
+                alertView.addAction(okAction)
+                self?.present(alertView, animated: true, completion: nil)
             }
         }
     }
